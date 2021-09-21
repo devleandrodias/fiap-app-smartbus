@@ -1,9 +1,6 @@
-#Aplicativo SmartBus
+# Aplicativo SmartBus
 
-##Link do projeto
-https://github.com/devleandrodias/fiap-app-smartbus 
-
-##Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - React Native
 - Visual Studio Code
@@ -12,16 +9,16 @@ https://github.com/devleandrodias/fiap-app-smartbus
 - Git
 - Integração com API do SPTrans
 
-Link da documentação da API
+## Link da documentação da API
 https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/documentacao-api 
 
-##Telas criadas:
+## Telas criadas:
 
-[x] - Tela 1 - Tela de linhas de ônibus
+- [x] Tela 1 - Tela de linhas de ônibus
 
-[x] - Tela 2 - Tela de pontos de paradas
+- [x] Tela 2 - Tela de pontos de paradas
 
-##Passo a passo para executar o app no celular
+## Passo a passo para executar o app no celular
 
 `adb devices`
 
@@ -29,6 +26,6 @@ https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/d
 
 `yarn android --deviceId=[id_do_celular]`
 
-##Observações
+## Observações
 
 Devido a uma limitação do API do SPTrans só é possível realizar requisições http através de um dispositivo físico (Celular), pois ele não reconhece o emulador como dispositivo válido por conta da autenticação
