@@ -4,7 +4,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {LinesScreen} from './screens/line.screen';
-import {RouteScreen} from './screens/route.screen';
+import {StopScreen} from './screens/stops.screen';
+import {ArrivalForecastScreen} from './screens/ arrival-forecast.screen';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -15,20 +16,29 @@ const App = () => {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen
-          name="Rota"
-          component={RouteScreen}
-          options={{
-            tabBarIcon() {
-              return <Icon name="map-signs" size={20} color="#999" />;
-            },
-          }}
-        />
-        <Tab.Screen
           name="Linhas"
           component={LinesScreen}
           options={{
             tabBarIcon() {
               return <Icon name="bus" size={20} color="#999" />;
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Paradas"
+          component={StopScreen}
+          options={{
+            tabBarIcon() {
+              return <Icon name="ban" size={20} color="#999" />;
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Previsão chegada"
+          component={ArrivalForecastScreen}
+          options={{
+            tabBarIcon() {
+              return <Icon name="map" size={20} color="#999" />;
             },
           }}
         />
