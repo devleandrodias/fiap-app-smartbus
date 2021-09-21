@@ -1,6 +1,6 @@
-import {ILineResponse} from '../interfaces/line.model';
+import {ILine} from '../interfaces/line.model';
 
-export const linesMock: ILineResponse[] = [
+export const linesMock: ILine[] = [
   {
     cl: 2506,
     lc: false,

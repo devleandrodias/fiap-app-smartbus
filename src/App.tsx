@@ -5,7 +5,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {LinesScreen} from './screens/line.screen';
 import {StopScreen} from './screens/stops.screen';
-import {ArrivalForecastScreen} from './screens/ arrival-forecast.screen';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -30,15 +29,6 @@ const App = () => {
           options={{
             tabBarIcon() {
               return <Icon name="ban" size={20} color="#999" />;
-            },
-          }}
-        />
-        <Tab.Screen
-          name="Previsão chegada"
-          component={ArrivalForecastScreen}
-          options={{
-            tabBarIcon() {
-              return <Icon name="map" size={20} color="#999" />;
             },
           }}
         />

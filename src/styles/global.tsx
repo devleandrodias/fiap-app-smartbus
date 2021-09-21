@@ -16,4 +16,18 @@ export const global = StyleSheet.create({
     padding: 15,
     marginBottom: 15,
   },
+  viewCardContainer: {
+    paddingVertical: 15,
+    paddingHorizontal: 15,
+    borderWidth: 1,
+    backgroundColor: '#fff',
+    marginBottom: 15,
+    borderRadius: 15,
+  },
+  text: {
+    marginBottom: 10,
+  },
+  textFocus: {
+    fontWeight: 'bold',
+  },
 });
