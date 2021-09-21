@@ -7,10 +7,10 @@ export const global = StyleSheet.create({
   },
   viewContainer: {
     padding: 20,
+    paddingBottom: 100,
   },
   inputStyle: {
     borderColor: '#000000',
-    color: '#000',
     backgroundColor: '#fff',
     borderWidth: 1,
     borderRadius: 15,

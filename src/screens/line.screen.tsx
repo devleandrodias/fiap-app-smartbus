@@ -1,29 +1,36 @@
-import axios from 'axios';
 import React, {useState} from 'react';
-import {TextInput, View, ScrollView} from 'react-native';
+import {TextInput, View, ScrollView, ActivityIndicator} from 'react-native';
 
+import {apiSpTrans} from '../api/api';
 import {global} from '../styles/global';
 import {ILine} from '../interfaces/line.model';
 import {RouteCard} from '../components/route-card';
+import {Authenticate} from '../auth/auth.helper';
 
 export const LinesScreen = () => {
   const [search, setSearch] = useState<string>();
 
   const [data, setData] = useState<ILine[]>([]);
 
+  const [loading, setLoading] = useState<boolean>(false);
+
   async function handleFetch() {
     try {
-      await axios.post(
-        'http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=7fc0bb36d1d3fff64efe266cb9dd3ab4dcd6b97b30685a0029800208bb6c274a',
-      );
+      setLoading(true);
 
-      const response = await axios.get(
-        `http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca="${search}"`,
+      await Authenticate();
+
+      const response = await apiSpTrans.get(
+        `Linha/Buscar?termosBusca="${search}"`,
       );
 
       setData(response.data);
+
+      setLoading(false);
     } catch (error) {
       console.error('API Indisponível');
+
+      setLoading(false);
     }
   }
 
@@ -31,15 +38,20 @@ export const LinesScreen = () => {
     <View style={global.viewContainer}>
       <TextInput
         style={global.inputStyle}
+        placeholderTextColor="gray"
         onSubmitEditing={handleFetch}
         placeholder="Digite a linha de ônibus"
         onChangeText={text => setSearch(text)}
       />
-      <ScrollView>
-        {data.map(line => (
-          <RouteCard key={line.cl} line={line} />
-        ))}
-      </ScrollView>
+      {loading ? (
+        <ActivityIndicator size="large" />
+      ) : (
+        <ScrollView>
+          {data.map(line => (
+            <RouteCard key={line.cl} line={line} />
+          ))}
+        </ScrollView>
+      )}
     </View>
   );
 };
