@@ -10,6 +10,7 @@ export const global = StyleSheet.create({
   },
   inputStyle: {
     borderColor: '#000000',
+    color: '#000',
     backgroundColor: '#fff',
     borderWidth: 1,
     borderRadius: 15,

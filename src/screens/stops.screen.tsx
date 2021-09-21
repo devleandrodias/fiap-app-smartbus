@@ -1,8 +1,8 @@
-import React, {useCallback, useState} from 'react';
+import axios from 'axios';
+import React, {useState} from 'react';
 import {ScrollView, TextInput, View} from 'react-native';
 
 import {global} from '../styles/global';
-import {stopsMock} from '../mock/stops.mock';
 import {IStop} from '../interfaces/stops.model';
 import {StopCard} from '../components/stop-card';
 
@@ -11,16 +11,21 @@ export const StopScreen = () => {
 
   const [data, setData] = useState<IStop[]>([]);
 
-  const handleFetch = useCallback(async () => {
+  async function handleFetch() {
     try {
-      console.log('Chamada a api retorna dados...');
-      console.warn(search);
-    } catch (error) {
-      console.error(error);
-    }
+      await axios.post(
+        'http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=7fc0bb36d1d3fff64efe266cb9dd3ab4dcd6b97b30685a0029800208bb6c274a',
+      );
 
-    setData(stopsMock);
-  }, [search]);
+      const response = await axios.get(
+        `http://api.olhovivo.sptrans.com.br/v2.1/Parada/Buscar?termosBusca="${search}"`,
+      );
+
+      setData(response.data);
+    } catch (error) {
+      console.error('API Indisponível');
+    }
+  }
 
   return (
     <View style={global.viewContainer}>
