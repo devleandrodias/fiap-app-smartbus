@@ -3,7 +3,6 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {MapScreen} from './screens/map.screen';
 import {LinesScreen} from './screens/line.screen';
 import {RouteScreen} from './screens/route.screen';
 
@@ -15,15 +14,6 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen
-          name="Mapa"
-          component={MapScreen}
-          options={{
-            tabBarIcon() {
-              return <Icon name="map-marker" size={20} color="#999" />;
-            },
-          }}
-        />
         <Tab.Screen
           name="Rota"
           component={RouteScreen}

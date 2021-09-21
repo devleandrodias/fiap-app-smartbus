@@ -1,4 +1,5 @@
+import {ILineResponse} from '../../../interfaces/line.model';
+
 export interface IRouteCardProps {
-  previsaoSaida: string;
-  previsaoChegada: string;
+  line: ILineResponse;
 }

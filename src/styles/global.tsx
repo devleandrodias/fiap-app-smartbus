@@ -6,13 +6,13 @@ export const global = StyleSheet.create({
     alignItems: 'center',
   },
   viewContainer: {
-    padding: 25,
+    padding: 20,
   },
   inputStyle: {
     borderColor: '#000000',
     backgroundColor: '#fff',
     borderWidth: 1,
-    borderRadius: 25,
+    borderRadius: 15,
     padding: 15,
     marginBottom: 15,
   },
