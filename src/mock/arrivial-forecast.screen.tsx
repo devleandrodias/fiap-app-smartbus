@@ -1,6 +1,6 @@
-import {IArrivialForecast} from '../interfaces/arrival-forecast.model';
+import {IArrivalForecast} from '../interfaces/arrival-forecast.model';
 
-export const arrivialForecastMock: IArrivialForecast[] = [
+export const arrivalForecastMock: IArrivalForecast[] = [
   {
     hr: '20:09',
     p: {

@@ -1,4 +1,4 @@
-export interface IArrivialForecast {
+export interface IArrivalForecast {
   hr: string;
   p: {
     cp: number;

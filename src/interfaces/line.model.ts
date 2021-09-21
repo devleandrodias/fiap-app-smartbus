@@ -1,4 +1,4 @@
-export interface ILineResponse {
+export interface ILine {
   cl: number;
   lc: boolean;
   lt: string;

@@ -2,14 +2,14 @@ import React, {useCallback, useState} from 'react';
 import {TextInput, View, ScrollView} from 'react-native';
 
 import {global} from '../styles/global';
-import {RouteCard} from '../components/route-card';
 import {linesMock} from '../mock/lines.mock';
-import {ILineResponse} from '../interfaces/line.model';
+import {ILine} from '../interfaces/line.model';
+import {RouteCard} from '../components/route-card';
 
 export const LinesScreen = () => {
   const [search, setSearch] = useState<string>();
 
-  const [data, setData] = useState<ILineResponse[]>([]);
+  const [data, setData] = useState<ILine[]>([]);
 
   const handleFetch = useCallback(async () => {
     try {
