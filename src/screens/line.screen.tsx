@@ -28,7 +28,7 @@ export const LinesScreen = () => {
 
       setLoading(false);
     } catch (error) {
-      console.error('API Indisponível');
+      console.error('API indisponível temporáriamente');
 
       setLoading(false);
     }
